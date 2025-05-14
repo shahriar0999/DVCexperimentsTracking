@@ -36,8 +36,7 @@ print(report)
 with Live(save_dvc_exp=True) as live:
     # Log scalar metrics
     live.log_metric("accuracy", accuracy)
-    live.log_metric("precision_macro", report["macro avg"]["precision"])
-    live.log_metric("recall_macro", report["macro avg"]["recall"])
+    live.log_metric("classification_report", report)
     
     live.log_param("n_estimators", n_estimators)
     live.log_param("max_depth", max_depth)
